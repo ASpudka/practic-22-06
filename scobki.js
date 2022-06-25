@@ -1,28 +1,28 @@
 "use strict";
 
-const optionGlobal ={
-  brackets:{
-    '(':')',
-    '[':']',
-    '{':'}',
+const optionGlobal = {
+  brackets: {
+    "(": ")",
+    "[": "]",
+    "{": "}",
   },
-  isStrict:true
-}
+  isStrict: true,
+};
 
-const checkBrackets =(str,options = optionGlobal)=>{
+const checkBrackets = (str, options = optionGlobal) => {
   const brackets = options.brackets;
-    const stack = new Stack(str.lenght);
+  const stack = new Stack(str.lenght);
   for (const symbol of str) {
-    if(brackets[symbol]){
+    if (brackets[symbol]) {
       stack.push(symbol);
     }
-    };
-    if (brackets[stack.pick()] === symbol){
-    stack.pop();
-  }else if(Object.values(brackets).includes(symbol)){
-    return false;
+    if (brackets[stack.pick()] === symbol) {
+      stack.pop();
+    } else if (Object.values(brackets).includes(symbol)) {
+      return false;
+    }
   }
-    return stack.empty;
-  }
+  return stack.empty;
+};
 
-  console.log(checkBrackets('())()))()',optionGlobal));
+console.log(checkBrackets("(a{}))", optionGlobal));
