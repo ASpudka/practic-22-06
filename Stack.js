@@ -36,7 +36,7 @@ class Stack {
   }
 
 
-const stack1 = new Stack();
+// const stack1 = new Stack();
 
-const stack2 = new Stack (5,2,3,4,5,6,6);
-console.log(stack2);
+// const stack2 = new Stack (5,2,3,4,5,6,);
+// console.log(stack2);
